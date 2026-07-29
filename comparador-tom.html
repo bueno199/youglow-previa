@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YOU GLOW — 3 saídas de tom (dark · alternado · claro)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;background:#0c0908;color:#E3D9CD}
+.pg{max-width:1240px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.4rem)}
+.top{position:sticky;top:0;z-index:400;background:rgba(12,9,8,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(227,217,205,.14)}
+.top .pg{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.85rem;padding-bottom:.85rem;flex-wrap:wrap}
+.top strong{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:500}
+.top nav{display:flex;gap:.35rem;flex-wrap:wrap}
+.top nav a{font-size:.72rem;text-decoration:none;color:rgba(227,217,205,.72);padding:.42rem .8rem;border:1px solid rgba(227,217,205,.2);border-radius:2px}
+.top nav a:hover{color:#E3D9CD;border-color:#C08D9B}
+.intro{padding:2.3rem 0 .4rem}
+.intro h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.14}
+.intro p{max-width:66ch;color:rgba(227,217,205,.75);line-height:1.75;font-size:.93rem;margin-top:.85rem}
+.sw{display:flex;gap:.35rem;margin:1.1rem 0 0;flex-wrap:wrap}
+.sw i{width:46px;height:32px;border-radius:2px;display:block;position:relative}
+.sw i::after{content:attr(data-h);position:absolute;top:36px;left:0;font-size:.52rem;color:rgba(227,217,205,.5);white-space:nowrap}
+.rot{display:flex;align-items:baseline;gap:1rem;padding:3.2rem 0 .7rem;margin-top:1.4rem;border-top:1px solid rgba(227,217,205,.14)}
+.rot b{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:400;color:#C08D9B;line-height:1}
+.rot span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(227,217,205,.62)}
+.nota{font-size:.85rem;color:rgba(227,217,205,.74);line-height:1.7;margin:0 0 1.2rem;padding-left:1rem;border-left:2px solid #C08D9B;max-width:72ch}
+.demo{border-radius:3px;overflow:hidden;box-shadow:0 22px 64px rgba(0,0,0,.55)}
+
+/* ═══ estrutura comum das amostras ═══ */
+.s{color:var(--tx);background:var(--bg)}
+.s-nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.2rem,3vw,2.2rem);position:relative;z-index:5;border-bottom:1px solid var(--ln)}
+.marca{font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:.16em;color:var(--navTx)}
+.marca b{font-weight:400;color:var(--gold)}
+.s-links{display:flex;gap:.9rem}
+.s-links span{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navTx);opacity:.85}
+.s-cta{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:.65rem 1.25rem;border-radius:1px;border:1px solid var(--ctaBd);color:var(--ctaTx);background:var(--ctaBg)}
+.hero{position:relative;min-height:320px;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero .veu{position:absolute;inset:0;z-index:-1;background:var(--heroVeu)}
+.hero .in{padding:clamp(1.4rem,3vw,2.4rem);width:100%}
+.hero .eyb{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--heroEyb);display:block;margin-bottom:.5rem}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.06;color:var(--heroTx)}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.bloco{padding:clamp(1.8rem,4vw,2.9rem) clamp(1.2rem,3vw,2.2rem);background:var(--secBg);color:var(--secTx)}
+.eyb2{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--acc);font-weight:600;display:block;margin-bottom:.5rem}
+.h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.12}
+.h2 em{font-style:italic;color:var(--gold)}
+.corpo{font-size:.85rem;line-height:1.75;color:var(--secTxS);max-width:46ch;margin-top:.6rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.4rem}
+.card{border:1px solid var(--ln2);border-radius:2px;overflow:hidden;background:var(--cardBg)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.card .cb{padding:.85rem}
+.card .n{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:.25rem}
+.card .t{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--secTx)}
+.faixa{padding:clamp(1.6rem,3.5vw,2.4rem) clamp(1.2rem,3vw,2.2rem);background:var(--faixaBg);color:var(--faixaTx)}
+.faixa .h2{color:var(--faixaTx)}
+.faixa .corpo{color:var(--faixaTxS)}
+@media(max-width:760px){.cards{grid-template-columns:1fr 1fr}.s-links{display:none}}
+
+/* ══════ A · TUDO DARK (com o meio-tom rosé aplicado) ══════ */
+.tA{--bg:#100b0a;--tx:#efe7dc;--ln:rgba(239,231,220,.15);--ln2:rgba(239,231,220,.14);
+  --navTx:#efe7dc;--gold:#d8b36a;--acc:#C08D9B;
+  --ctaBg:transparent;--ctaBd:#A0687A;--ctaTx:#C08D9B;
+  --heroVeu:linear-gradient(180deg,rgba(16,11,10,.3),rgba(16,11,10,.85));--heroTx:#efe7dc;--heroEyb:#C08D9B;
+  --secBg:#100b0a;--secTx:#efe7dc;--secTxS:#a99f92;--cardBg:#1b1310;
+  --faixaBg:linear-gradient(158deg,#4a1c30,#2A0F1B 88%);--faixaTx:#efe7dc;--faixaTxS:rgba(239,231,220,.8)}
+
+/* ══════ B · ALTERNADO (hero dark → corpo creme) — o padrão Avivah ══════ */
+.tB{--bg:#F3EEE5;--tx:#241016;--ln:rgba(36,16,22,.14);--ln2:rgba(36,16,22,.14);
+  --navTx:#efe7dc;--gold:#B08A45;--acc:#8E4F63;
+  --ctaBg:#4a1c30;--ctaBd:#4a1c30;--ctaTx:#F3EEE5;
+  --heroVeu:linear-gradient(180deg,rgba(16,11,10,.32),rgba(16,11,10,.88));--heroTx:#efe7dc;--heroEyb:#C08D9B;
+  --secBg:#F3EEE5;--secTx:#241016;--secTxS:#6E5A5F;--cardBg:#EAE2D5;
+  --faixaBg:linear-gradient(158deg,#4a1c30,#2A0F1B 88%);--faixaTx:#efe7dc;--faixaTxS:rgba(239,231,220,.82)}
+.tB .s-nav{background:#100b0a}
+
+/* ══════ C · TUDO CLARO (padrão Marsea: vinho sobre creme) ══════ */
+.tC{--bg:#F4EBDF;--tx:#2A0F1B;--ln:rgba(42,15,27,.16);--ln2:rgba(42,15,27,.14);
+  --navTx:#2A0F1B;--gold:#A07A32;--acc:#A36D6C;
+  --ctaBg:#4a1c30;--ctaBd:#4a1c30;--ctaTx:#F4EBDF;
+  --heroVeu:linear-gradient(180deg,rgba(42,15,27,.12),rgba(42,15,27,.55));--heroTx:#F7F0E6;--heroEyb:#E4C7B9;
+  --secBg:#F4EBDF;--secTx:#2A0F1B;--secTxS:#6E5A55;--cardBg:#EDE1D1;
+  --faixaBg:#E9DCCB;--faixaTx:#2A0F1B;--faixaTxS:#6E5A55}
+.tC .faixa{border-top:1px solid rgba(42,15,27,.14)}
+
+footer{padding:2.8rem 0 4rem;text-align:center;font-size:.86rem;line-height:1.9;color:rgba(227,217,205,.74)}
+footer b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;display:block;margin-bottom:.6rem;color:#C08D9B}
+</style>
+
+<div class="top"><div class="pg">
+  <strong>YOU GLOW · 3 saídas de tom</strong>
+  <nav><a href="#a">A dark</a><a href="#b">B alternado</a><a href="#c">C claro</a></nav>
+</div></div>
+
+<div class="pg intro">
+  <h2>A paleta da marca dela <em>já é</em> a de um site premiado</h2>
+  <p>O Marsea (melhor do lote dissecado) usa <b>vinho #400D1C + creme #F4EBDF + rosé #A36D6C</b>. O ameixa da YOU GLOW é <b>#4a1c30</b> — praticamente a mesma cor. As 3 amostras abaixo usam o MESMO conteúdo e as MESMAS fotos: muda só o tom. Todas já têm o <b>meio-tom rosé</b> que faltava (antes o site saltava de carvão direto pro dourado, sem degrau).</p>
+  <div class="sw">
+    <i style="background:#100b0a" data-h="#100b0a carvão"></i>
+    <i style="background:#4a1c30" data-h="#4a1c30 ameixa"></i>
+    <i style="background:#A0687A" data-h="#A0687A rosé ★"></i>
+    <i style="background:#C08D9B" data-h="#C08D9B rosé claro"></i>
+    <i style="background:#d8b36a" data-h="#d8b36a dourado"></i>
+    <i style="background:#F3EEE5" data-h="#F3EEE5 creme"></i>
+  </div>
+  <p style="margin-top:2.2rem;font-size:.85rem;opacity:.8">★ o rosé é o achado: derivei do ameixa DELA (não copiei o do Marsea) pra ficar coeso com a marca.</p>
+</div>
+
+<!-- A -->
+<div class="pg"><div class="rot" id="a"><b>A</b><span>Tudo dark · como está hoje, agora com o meio-tom</span></div>
+<p class="nota">Mantém a identidade que ela já viu e aprovou. O ganho: o rosé entra como degrau entre o carvão e o dourado, e o ameixa vira estrutura (faixa) em vez de detalhe. ⚠️ Risco medido: <b>4 dos 5 sites de alto padrão do nicho são claros</b> — dark do começo ao fim cansa a leitura quando o site crescer pras 14-18 páginas.</p></div>
+<div class="pg"><div class="demo tA s">
+  <div class="s-nav"><div class="marca">YOU <b>GLOW</b></div><div class="s-links"><span>Serviços</span><span>Trabalhos</span><span>A clínica</span><span>Contato</span></div><span class="s-cta">Agendar avaliação</span></div>
+  <div class="hero"><img src="assets/hero-alt.jpg" alt=""><div class="veu"></div>
+    <div class="in"><span class="eyb">Clínica de estética · Palhoça</span><h1>Você tem uma luz <em>só sua</em>.</h1></div></div>
+  <div class="bloco"><span class="eyb2">Nossos serviços</span><div class="h2">Quatro frentes de cuidado</div>
+    <p class="corpo">Micropigmentação, estética facial, cabelo e unhas — com hora marcada e avaliação antes de qualquer procedimento.</p>
+    <div class="cards">
+      <div class="card"><img src="assets/svc-facial.jpg" alt=""><div class="cb"><span class="n">01</span><span class="t">Estética facial</span></div></div>
+      <div class="card"><img src="assets/svc-cabelo.jpg" alt=""><div class="cb"><span class="n">02</span><span class="t">Cabelo</span></div></div>
+      <div class="card"><img src="assets/unhas.jpg" alt=""><div class="cb"><span class="n">03</span><span class="t">Unhas</span></div></div>
+    </div></div>
+  <div class="faixa"><div class="h2">Um espaço para reconectar com a sua <em>melhor versão</em>.</div>
+    <p class="corpo">Aririú, Palhoça · atendimento com hora marcada.</p></div>
+</div></div>
+
+<!-- B -->
+<div class="pg"><div class="rot" id="b"><b>B</b><span>Alternado · hero dark → corpo creme (padrão Avivah, BR)</span></div>
+<p class="nota">O caminho do meio e a <b>recomendação da pesquisa</b>: o hero mantém o drama escuro e o dourado que ela aprovou; as seções internas viram creme, que aguenta 14-18 páginas sem cansar. A faixa de fechamento volta ao ameixa — costura os dois mundos. É o padrão do único site BR de alto padrão do lote.</p></div>
+<div class="pg"><div class="demo tB s">
+  <div class="s-nav"><div class="marca">YOU <b>GLOW</b></div><div class="s-links"><span>Serviços</span><span>Trabalhos</span><span>A clínica</span><span>Contato</span></div><span class="s-cta">Agendar avaliação</span></div>
+  <div class="hero"><img src="assets/hero-alt.jpg" alt=""><div class="veu"></div>
+    <div class="in"><span class="eyb">Clínica de estética · Palhoça</span><h1>Você tem uma luz <em>só sua</em>.</h1></div></div>
+  <div class="bloco"><span class="eyb2">Nossos serviços</span><div class="h2">Quatro frentes de cuidado</div>
+    <p class="corpo">Micropigmentação, estética facial, cabelo e unhas — com hora marcada e avaliação antes de qualquer procedimento.</p>
+    <div class="cards">
+      <div class="card"><img src="assets/svc-facial.jpg" alt=""><div class="cb"><span class="n">01</span><span class="t">Estética facial</span></div></div>
+      <div class="card"><img src="assets/svc-cabelo.jpg" alt=""><div class="cb"><span class="n">02</span><span class="t">Cabelo</span></div></div>
+      <div class="card"><img src="assets/unhas.jpg" alt=""><div class="cb"><span class="n">03</span><span class="t">Unhas</span></div></div>
+    </div></div>
+  <div class="faixa"><div class="h2">Um espaço para reconectar com a sua <em>melhor versão</em>.</div>
+    <p class="corpo">Aririú, Palhoça · atendimento com hora marcada.</p></div>
+</div></div>
+
+<!-- C -->
+<div class="pg"><div class="rot" id="c"><b>C</b><span>Tudo claro · vinho sobre creme (padrão Marsea, o premiado)</span></div>
+<p class="nota">A cópia estrutural do melhor site do lote: creme quente de base, ameixa como texto e botão, rosé de meio-tom, dourado quase ausente. É o mais "clínica europeia" e o que melhor aguenta muito conteúdo. ⚠️ Custo: ela perde o dourado sobre escuro que já tinha aprovado — o dourado só existe bem sobre fundo escuro (medido em 4 sites).</p></div>
+<div class="pg"><div class="demo tC s">
+  <div class="s-nav"><div class="marca">YOU <b>GLOW</b></div><div class="s-links"><span>Serviços</span><span>Trabalhos</span><span>A clínica</span><span>Contato</span></div><span class="s-cta">Agendar avaliação</span></div>
+  <div class="hero"><img src="assets/hero-alt.jpg" alt=""><div class="veu"></div>
+    <div class="in"><span class="eyb">Clínica de estética · Palhoça</span><h1>Você tem uma luz <em>só sua</em>.</h1></div></div>
+  <div class="bloco"><span class="eyb2">Nossos serviços</span><div class="h2">Quatro frentes de cuidado</div>
+    <p class="corpo">Micropigmentação, estética facial, cabelo e unhas — com hora marcada e avaliação antes de qualquer procedimento.</p>
+    <div class="cards">
+      <div class="card"><img src="assets/svc-facial.jpg" alt=""><div class="cb"><span class="n">01</span><span class="t">Estética facial</span></div></div>
+      <div class="card"><img src="assets/svc-cabelo.jpg" alt=""><div class="cb"><span class="n">02</span><span class="t">Cabelo</span></div></div>
+      <div class="card"><img src="assets/unhas.jpg" alt=""><div class="cb"><span class="n">03</span><span class="t">Unhas</span></div></div>
+    </div></div>
+  <div class="faixa"><div class="h2">Um espaço para reconectar com a sua <em>melhor versão</em>.</div>
+    <p class="corpo">Aririú, Palhoça · atendimento com hora marcada.</p></div>
+</div></div>
+
+<footer><b>A recomendação da pesquisa é a B</b>
+Mantém o dourado sobre escuro que ela aprovou no hero · o corpo claro aguenta as 14-18 páginas · a faixa ameixa costura os dois<br>
+<span style="opacity:.6">As três já têm o meio-tom rosé. A decisão de tom é sua.</span></footer>
+</html>

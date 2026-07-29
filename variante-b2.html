@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Vinho & Rosé] YOU GLOW — Clínica de Estética & Salão de Beleza · Palhoça</title>
+<meta name="description" content="YOU GLOW — clínica de estética e salão de beleza em Palhoça/Pagani. Unhas, estética facial e cabelo. Agende pelo WhatsApp. Você Brilha.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,500&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f2; --panel:#efeae1; --panel-2:#e7e0d4; --ink:#161311; --muted:#6d655c;
+  --line:rgba(22,19,17,.14); --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--ink);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.script{font-family:'Pinyon Script',cursive;font-weight:400}
+.serif{font-family:'Bodoni Moda',serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
+.eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+section{position:relative}
+
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:.5s var(--ease)}
+.hdr.solid{background:rgba(250,247,242,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .in{display:flex;align-items:center;justify-content:space-between;padding:clamp(1rem,2.2vw,1.5rem) 0}
+.brand{font-family:'Bodoni Moda',serif;font-size:1.3rem;font-weight:500;letter-spacing:.14em}
+.nav{display:flex;gap:1.7rem;align-items:center}
+.ni{position:relative}
+.nt{background:none;border:0;cursor:pointer;font-family:'Jost',sans-serif;font-weight:300;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:.3rem 0;position:relative;transition:color .3s var(--ease)}
+.nt::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--ink);transition:.4s var(--ease)}
+.nt:hover,.ni.open .nt{color:var(--ink)}
+.nt:hover::after,.ni.open .nt::after{width:100%}
+.nt:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.nd{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:250px;background:#fff;border:1px solid var(--line);padding:0 1.1rem;opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease);z-index:120;box-shadow:0 20px 50px rgba(22,19,17,.09)}
+.nd::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:11px;height:11px;background:#fff;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.ni.open .nd{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.ndi{border-bottom:1px solid var(--line)}.ndi:last-child{border-bottom:0}
+.ndw{display:block;width:100%;background:none;border:0;cursor:pointer;font-family:'Bodoni Moda',serif;font-size:1.02rem;color:var(--ink);padding:.85rem .2rem;text-align:left;transition:color .25s}
+.ndw:hover{color:var(--muted)}
+.ndw:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.ndd{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s var(--ease),opacity .4s;font-size:.82rem;line-height:1.55;color:var(--muted);text-align:left}
+.ndi.on .ndd{max-height:160px;opacity:1;padding-bottom:.85rem}
+.hdr-cta{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);position:relative;display:inline-flex;align-items:center}
+.hdr-cta::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.hdr-cta:hover::after{transform:scaleX(1);transform-origin:left}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer}
+.burger span{width:26px;height:1.5px;background:var(--ink);transition:.4s var(--ease)}
+@media(max-width:820px){.nav,.hdr-cta{display:none}.burger{display:flex}}
+
+/* hero */
+.hero{padding-top:clamp(6rem,12vw,9rem);padding-bottom:clamp(3rem,6vw,5rem)}
+.hnum{font-family:'Bodoni Moda',serif;font-size:.9rem;color:var(--muted);margin-bottom:1.3rem;display:block}
+.htitle{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2.4rem,6.4vw,5.4rem);line-height:1.05;letter-spacing:-.01em;max-width:17ch}
+.htitle .script{font-size:1.22em;line-height:.7;font-weight:400}
+.htitle .paren{color:var(--muted)}
+.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,3vw,3rem);align-items:end;margin-top:clamp(2rem,4vw,3.2rem)}
+@media(max-width:860px){.herogrid{grid-template-columns:1fr}}
+.hleft{display:flex;flex-direction:column;gap:1.4rem}
+.hthumb{width:170px;aspect-ratio:1/1;object-fit:cover}
+.hlead{font-size:.98rem;line-height:1.7;color:var(--muted);max-width:42ch}
+.hlead b{color:var(--ink);font-weight:400}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:.7rem;padding:.85rem 1.9rem;border:1px solid var(--ink);border-radius:40px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;transition:.45s var(--ease)}
+.pill:hover{background:var(--ink);color:var(--bg)}
+.pill svg{width:14px;height:14px;transition:.4s var(--ease)}
+.pill:hover svg{transform:translateX(4px)}
+.hphoto{position:relative;aspect-ratio:4/3;overflow:hidden}
+.hphoto img{width:100%;height:100%;object-fit:cover}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem 2.2rem;align-items:baseline;margin-top:clamp(2.5rem,5vw,4rem);font-family:'Bodoni Moda',serif;font-size:clamp(1.4rem,3.6vw,2.4rem);line-height:1.3}
+.tags .script{font-size:1.5em}
+.tags .sep{color:var(--line);font-size:.7em}
+
+/* band */
+.band{position:relative;height:clamp(20rem,46vw,32rem);overflow:hidden;display:grid;place-items:center;margin:clamp(2rem,5vw,4rem) 0}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:rgba(var(--panel-rgb),.28)}
+.band h2{position:relative;z-index:2;color:#fff;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2rem,5.5vw,4rem);text-align:center;line-height:1.1}
+.band h2 .script{font-size:1.3em}
+
+/* statement */
+.statement{padding:clamp(3rem,7vw,6rem) 0}
+.statement p{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(1.8rem,4.6vw,3.4rem);line-height:1.28;max-width:20ch}
+.statement .script{font-size:1.3em}
+.statement .lg{max-width:24ch}
+
+/* serviços */
+.svc-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.svc-head h2{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2rem,5vw,3.4rem);line-height:1}
+.svc-head h2 .script{font-size:1.35em}
+.svc-num{font-family:'Bodoni Moda',serif;color:var(--muted);font-size:1rem}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,2.5vw,2rem)}
+@media(max-width:820px){.svcs{grid-template-columns:1fr;gap:1.6rem}}
+.svc{display:flex;flex-direction:column}
+.svc:nth-child(2){margin-top:clamp(0px,4vw,3.5rem)}
+.svc:nth-child(3){margin-top:clamp(0px,8vw,7rem)}
+@media(max-width:820px){.svc:nth-child(n){margin-top:0}}
+.svc .ph{aspect-ratio:3/4;overflow:hidden;margin-bottom:1rem}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:.7s var(--ease)}
+.svc:hover .ph img{transform:scale(1.05)}
+.svc .lbl{font-family:'Bodoni Moda',serif;font-size:1.5rem;font-weight:500;display:flex;align-items:baseline;gap:.5rem}
+.svc .lbl .script{font-size:1.2em;color:var(--muted)}
+.svc p{font-size:.9rem;color:var(--muted);line-height:1.6;margin-top:.5rem;max-width:34ch}
+
+/* sobre */
+.about{padding:clamp(3rem,7vw,6rem) 0}
+.aboutgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+@media(max-width:860px){.aboutgrid{grid-template-columns:1fr}}
+.about h2{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;margin:.8rem 0 1.4rem}
+.about h2 .script{font-size:1.3em}
+.about p{font-size:1rem;line-height:1.8;color:var(--muted);max-width:46ch;margin-bottom:1.1rem}
+.about .info{display:flex;gap:2.5rem;margin-top:1.8rem;flex-wrap:wrap}
+.about .info .lbl{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.4rem}
+.about .info .val{font-family:'Bodoni Moda',serif;font-size:1.05rem;line-height:1.5}
+.about .ph{aspect-ratio:3/4;overflow:hidden}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+
+/* galeria */
+.works{padding:clamp(3rem,7vw,6rem) 0}
+.works-grid{columns:3;column-gap:clamp(1rem,2vw,1.5rem)}
+@media(max-width:820px){.works-grid{columns:2}}
+@media(max-width:520px){.works-grid{columns:1}}
+.works-grid a{display:block;margin-bottom:clamp(1rem,2vw,1.5rem);overflow:hidden;position:relative;break-inside:avoid}
+.works-grid img{width:100%;transition:.7s var(--ease)}
+.works-grid a:hover img{transform:scale(1.05)}
+.works-more{display:grid;place-items:center;aspect-ratio:1/1;background:var(--panel-2);text-align:center;padding:1rem}
+.works-more span{font-family:'Bodoni Moda',serif;font-size:1.3rem}
+.works-more small{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
+
+/* cta */
+.cta-final{text-align:center;padding:clamp(4rem,9vw,7rem) 0}
+.cta-final h2{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;margin-bottom:1.8rem}
+.cta-final h2 .script{font-size:1.3em}
+
+/* footer */
+footer{background:var(--ink);color:var(--bg);padding:clamp(3rem,6vw,4.5rem) 0 2rem}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:2.2rem}}
+footer .brand{color:var(--bg);font-size:1.6rem;display:block;margin-bottom:.8rem}
+footer p,footer a{color:rgba(var(--ink-rgb),.7);font-size:.9rem;line-height:1.8}
+footer a:hover{color:var(--bg)}
+.fcol h4{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(var(--ink-rgb),.5);margin-bottom:1rem}
+.fcol .fitem{display:block}
+.fbot{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(var(--ink-rgb),.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.72rem;color:rgba(var(--ink-rgb),.45);letter-spacing:.08em}
+
+/* wa float */
+.wa{position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;width:54px;height:54px;border-radius:50%;background:var(--ink);display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:.4s var(--ease)}
+.wa:hover{transform:scale(1.06)}
+.wa svg{width:26px;height:26px;fill:var(--bg)}
+.badge{position:fixed;left:50%;bottom:.7rem;transform:translateX(-50%);z-index:59;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--line);padding:.4rem .9rem;border-radius:20px}
+
+/* overlay menu mobile */
+.ov{position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.3rem;opacity:0;visibility:hidden;transition:.5s var(--ease)}
+.ov.open{opacity:1;visibility:visible}
+.ov a{font-family:'Bodoni Moda',serif;font-size:2rem}
+.ov .x{position:absolute;top:1.4rem;right:1.8rem;font-size:2rem;background:none;border:0;cursor:pointer}
+
+/* anim base */
+[data-r]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}[data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ==================== TEMA DARK (override) ==================== */
+:root{
+  --bg:#100b0a; --panel:#1b1310; --panel-2:#241016; --ink:#efe7dc; --muted:#a99f92;
+  --bg-rgb:16,11,10; --panel-rgb:27,19,16; --panel2-rgb:36,16,22; --ink-rgb:239,231,220; --gold-rgb:216,179,106; --rose-rgb:160,104,122;
+  --line:rgba(var(--ink-rgb),.15); --gold:#d8b36a; --gold-hi:#f0d69a; --wine:#4a1c30; --wine-2:#63273f; --rose:#A0687A; --rose-hi:#C08D9B; --ease:cubic-bezier(.22,1,.36,1);
+}
+.hdr.solid{background:rgba(var(--bg-rgb),.9);border-bottom:1px solid var(--line)}
+/* dropdown escuro */
+.nd{background:var(--panel);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.nd::before{background:var(--panel)}
+.ndw{color:var(--ink)} .ndw:hover{color:var(--rose-hi)}
+/* acentos dourados */
+.hnum,.eyebrow,.svc-num{color:var(--rose-hi)}
+.htitle .script,.htitle .paren,.tags .script,.svc-head h2 .script,.cta-final h2 .script,.band h2 .script,.about h2 .script,.statement .script,.svc .lbl .script{color:var(--gold)}
+.svc .lbl .script{color:var(--gold-hi)}
+.hlead b{color:var(--gold-hi)}
+/* botões dourados clean */
+.pill{border-color:var(--rose);color:var(--rose-hi)}
+.pill:hover{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.hdr-cta{color:var(--gold-hi)} .hdr-cta::after{background:var(--gold)}
+/* imagens: base escura pra emoldurar */
+.svc .ph,.hphoto,.about .ph,.works-grid a,.works-more{background:var(--panel)}
+.works-more span{color:var(--ink)} .works-more small{color:var(--muted)}
+/* footer dark (NÃO inverter pra claro) */
+footer{background:var(--bg);color:var(--ink)}
+footer .brand{color:var(--ink)}
+footer p,footer a{color:rgba(var(--ink-rgb),.68)}
+footer a:hover{color:var(--rose-hi)}
+.fcol h4{color:rgba(var(--ink-rgb),.5)}
+.fbot{border-top:1px solid var(--line);color:rgba(var(--ink-rgb),.45)}
+/* wa float + badge + overlay */
+.wa{background:var(--wine);border:1px solid var(--gold)} .wa svg{fill:var(--gold-hi)}
+.wa:hover{background:var(--gold)} .wa:hover svg{fill:var(--bg)}
+.badge{background:var(--panel);border:1px solid var(--line);color:var(--muted)}
+.ov{background:var(--bg)} .ov a{color:var(--ink)} .ov a:hover{color:var(--rose-hi)}
+.burger span{background:var(--ink)}
+/* faixa */
+.band::after{background:rgba(var(--bg-rgb),.5)}
+.band h2{color:#fff}
+
+/* ==================== HERO FULL-BLEED (ref Laser Glam) ==================== */
+.fbhero{position:relative;min-height:100svh;width:100%;overflow:hidden;isolation:isolate}
+.fbbg{position:absolute;inset:0;z-index:-2}
+.fbbg img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.fbscrim{position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 90% at 42% 30%, rgba(var(--bg-rgb),.15), rgba(var(--bg-rgb),.6) 60%, rgba(var(--bg-rgb),.95)),linear-gradient(180deg, rgba(var(--bg-rgb),.6), rgba(var(--bg-rgb),.2) 40%, rgba(var(--bg-rgb),.96))}
+.fbgrain{position:absolute;inset:0;z-index:-1;opacity:.05;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.fbword{position:absolute;top:26%;left:0;right:0;z-index:5;text-align:center;pointer-events:none;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(4.5rem,22vw,20rem);line-height:.82;letter-spacing:.02em;color:rgba(var(--ink-rgb),.12);mix-blend-mode:screen;text-transform:uppercase;white-space:nowrap}
+.fbword .lit{color:transparent;background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%,var(--wine));-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 26px rgba(var(--gold-rgb),.55));animation:glowpulse 4.5s ease-in-out infinite}
+@keyframes glowpulse{0%,100%{filter:drop-shadow(0 0 20px rgba(var(--gold-rgb),.4))}50%{filter:drop-shadow(0 0 34px rgba(var(--gold-rgb),.7))}}
+.fblead{position:absolute;left:clamp(1.2rem,4vw,3rem);top:50%;transform:translateY(-50%);z-index:10;max-width:min(28rem,84vw)}
+.fblead .eyebrow{display:block;margin-bottom:1rem}
+.fbtitle{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.08;letter-spacing:.01em;color:var(--ink)}
+.fbtitle .script{font-size:1.35em;line-height:.6;color:var(--gold-hi)}
+.fbdesc{margin-top:1rem;color:var(--muted);font-size:.98rem;line-height:1.75;max-width:34ch}
+.fbdesc b{color:var(--gold-hi);font-weight:400}
+.fbcta{display:inline-flex;align-items:center;gap:.7rem;margin-top:1.7rem;padding:.9rem 1.7rem;border:1px solid var(--gold);color:var(--gold-hi);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;border-radius:2px;transition:.45s var(--ease)}
+.fbcta svg{width:14px;height:14px;transition:.4s var(--ease)}
+.fbcta:hover{background:var(--gold);color:var(--bg)} .fbcta:hover svg{transform:translateX(4px)}
+.fbinfo{position:absolute;z-index:10;left:50%;transform:translateX(-50%);bottom:clamp(1.6rem,4vw,2.6rem);display:none;width:max-content;max-width:90vw}
+.fbinfo__in{background:rgba(var(--panel-rgb),.72);backdrop-filter:blur(8px);border:1px solid var(--line);padding:1.4rem 1.6rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.4rem;max-width:24rem}
+.fbinfo h3{grid-column:1/-1;font-family:'Bodoni Moda',serif;font-weight:500;font-size:1.4rem;color:var(--ink)}
+.fbinfo .lbl{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.35rem}
+.fbinfo .val{font-size:.88rem;color:var(--muted);line-height:1.5;font-family:'Bodoni Moda',serif}
+.fbcards{position:absolute;z-index:10;right:clamp(1rem,2.4vw,2rem);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.85rem;width:min(18.5rem,34vw)}
+.fbcard{position:relative;display:flex;align-items:flex-end;height:8.2rem;overflow:hidden;border:1px solid var(--line);border-radius:2px;transition:.5s var(--ease)}
+.fbcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:.7s var(--ease)}
+.fbcard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(var(--bg-rgb),.92),rgba(var(--bg-rgb),.4) 70%,rgba(var(--bg-rgb),.15))}
+.fbcard:hover{border-color:rgba(var(--gold-rgb),.5)} .fbcard:hover img{transform:scale(1.06)}
+.fbcard__b{padding:.9rem 1.1rem;width:100%}
+.fbcard__n{font-size:.58rem;letter-spacing:.2em;color:var(--rose-hi)}
+.fbcard__t{font-family:'Bodoni Moda',serif;font-size:1.3rem;font-weight:500;line-height:1.05;margin:.15rem 0 .25rem;color:var(--ink)}
+.fbcard__d{font-size:.72rem;color:var(--muted);line-height:1.4;max-width:22ch}
+.fbcard__m{display:inline-block;margin-top:.5rem;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-hi);opacity:0;transform:translateY(6px);transition:.45s var(--ease)}
+.fbcard:hover .fbcard__m{opacity:1;transform:translateY(0)}
+@media(min-width:960px){.fbinfo{display:block}}
+@media(max-width:959px){.fbcards{display:none}.fblead{max-width:88vw}}
+
+/* ===== HERO LIMPO: GLOW protagonista ===== */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.fbword{top:44%;transform:translateY(-50%);color:rgba(var(--ink-rgb),.11);font-size:clamp(3.2rem,13.5vw,12.5rem)}
+.fbfoot{position:absolute;left:50%;bottom:clamp(3rem,9vh,6rem);transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.2rem;width:max-content;max-width:92vw}
+.fbfoot .eyebrow{display:block;font-size:.72rem;letter-spacing:.34em}
+@media(max-width:959px){.fbword{top:44%}}
+
+/* ===== SERVIÇOS: cards que ABREM em cascata ===== */
+.scards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.5rem);margin-top:clamp(1.6rem,3vw,2.6rem)}
+@media(max-width:820px){.scards{grid-template-columns:1fr}}
+.scard{position:relative;display:flex;align-items:flex-end;height:clamp(19rem,29vw,23rem);overflow:hidden;border:1px solid var(--line);border-radius:2px;text-decoration:none;transition:border-color .5s var(--ease)} /* VISÍVEL sempre; animação é só enfeite */
+.scard.in{animation:cardOpen 1s var(--ease) both}
+.scard.d1.in{animation-delay:.14s}.scard.d2.in{animation-delay:.28s}
+@keyframes cardOpen{0%{clip-path:inset(100% 0 0 0);opacity:0;transform:translateY(20px)}100%{clip-path:inset(0 0 0 0);opacity:1;transform:none}}
+.scard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s var(--ease)}
+.scard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(var(--bg-rgb),.12),rgba(var(--bg-rgb),.55) 55%,rgba(var(--bg-rgb),.95))}
+.scard:hover{border-color:rgba(var(--gold-rgb),.5)} .scard:hover img{transform:scale(1.05)}
+.scard__b{padding:1.4rem 1.5rem;width:100%}
+.scard__n{font-size:.62rem;letter-spacing:.24em;color:var(--rose-hi)}
+.scard__t{font-family:'Bodoni Moda',serif;font-size:1.6rem;font-weight:500;color:var(--ink);margin:.2rem 0 .4rem;line-height:1.05}
+.scards .scard__d{font-family:'Jost',sans-serif;font-weight:300;font-size:.84rem;color:rgba(var(--ink-rgb),.78);line-height:1.55;max-width:28ch;letter-spacing:0}
+.scard__m{display:inline-block;margin-top:.8rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-hi);opacity:0;transform:translateY(6px);transition:.45s var(--ease)}
+.scard:hover .scard__m{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.scard.in{animation:none!important}}
+
+/* ===== preencher vazios: colagem no statement + foto no CTA ===== */
+.stmt-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+@media(max-width:820px){.stmt-grid{grid-template-columns:1fr}}
+.statement--media .lg{max-width:20ch}
+.stmt-photos{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.stmt-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line);border-radius:2px}
+.stmt-photos img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.cta-final{position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;z-index:-2}
+.cta-final::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 120% at 50% 45%,rgba(var(--bg-rgb),.66),rgba(var(--bg-rgb),.93))}
+.cta-final .wrap{position:relative;z-index:2}
+.cta-final .pill{border-color:var(--rose);color:var(--rose-hi)}
+.cta-final .pill:hover{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+/* menos vazio: apertar o ritmo vertical */
+.statement{padding-block:clamp(2rem,4.4vw,3.4rem)}
+.about,.works{padding-block:clamp(2.4rem,5vw,4rem)}
+.cta-final{padding-block:clamp(3.4rem,7vw,5.2rem)}
+.svc-head{margin-bottom:clamp(1.3rem,2.4vw,1.9rem)}
+.scards{margin-top:clamp(1rem,2vw,1.5rem)}
+
+  /* ═══ AJUSTE 28/jul (achado da pesquisa de alto padrão): o dourado fazia TODO o
+     trabalho (32 usos) e o ameixa da MARCA quase não aparecia (2 usos), sem meio-tom.
+     Correção medida no Marsea (melhor do lote: vinho + creme + rosé de meio-tom). ═══ */
+  /* painéis alternados em ameixa — a cor da marca vira estrutura, não detalhe */
+  .statement,.fband{background:linear-gradient(158deg,var(--wine) 0%,var(--bg) 88%)}
+  .statement::before,.fband::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:radial-gradient(115% 88% at 14% 10%, rgba(var(--rose-rgb),.30), transparent 62%)}
+  .statement,.fband{position:relative;isolation:isolate}
+  /* linhas e divisores no meio-tom (antes: dourado ou linha neutra) */
+  .svc-num::after,.hnum::after{background:var(--rose)}
+  hr,.rule{border-color:rgba(var(--rose-rgb),.35)}
+  /* o dourado agora é LUZ: só no que é clímax (CTA principal e script) */
+  .script,.statement .script{color:var(--gold-hi)}
+
+  /* ═══════ TOM ALTERNADO — opção B (escolha do Anderson 28/jul, padrão Avivah) ═══════
+     hero e nav ficam ESCUROS (o dourado só vive sobre escuro, medido em 4 sites)
+     corpo vira CREME (aguenta as 14-18 páginas sem cansar)
+     faixas de ameixa costuram os dois mundos. Meio-tom rosé em ambos. */
+  :root{
+    --cream-bg:#F3EEE5;      /* corpo — neutro quente, nunca branco puro */
+    --cream-2:#EAE2D5;       /* painel/cartão */
+    --plum-tx:#241016;       /* TEXTO na cor da marca, nunca preto */
+    --plum-tx-2:#6E5A5F;     /* corpo de texto */
+    --rose-acc:#8E4F63;      /* acento no claro (o rosé escurecido pra ter contraste) */
+    --gold-claro:#7A5B21;    /* dourado ESCURECIDO p/ o claro — o #B08A45 dava 2,77:1 (reprovado no CHECK 12) */
+  }
+  /* corpo claro */
+  body{background:var(--cream-bg);color:var(--plum-tx)}
+  .about,.works,.statement:not(.statement--media){background:var(--cream-bg);color:var(--plum-tx)}
+  .about h2,.works h2,.statement h2,.about h3,.works h3{color:var(--plum-tx)}
+  .about p,.works p,.statement p{color:var(--plum-tx-2)}
+  .about .eyebrow,.works .eyebrow,.statement .eyebrow,
+  .about .hnum,.works .hnum,.about .svc-num,.works .svc-num{color:var(--rose-acc)}
+  .scard,.fbcard,.card{background:var(--cream-2);border-color:rgba(var(--panel2-rgb),.14)}
+  .scard__n,.fbcard__n{color:var(--rose-acc)}
+  .scard h3,.fbcard h3,.scard__t{color:var(--plum-tx)}
+  .scard__d,.fbcard p{color:var(--plum-tx-2)}
+  .script{color:var(--gold-claro)}
+  /* linhas e divisores no claro */
+  .about hr,.works hr,.rule{border-color:rgba(var(--panel2-rgb),.14)}
+  /* botões no claro: ameixa cheio */
+  .pill,.fbcta{border-color:var(--wine);color:var(--cream-bg);background:var(--wine)}
+  .pill:hover,.fbcta:hover{background:var(--wine-2);border-color:var(--wine-2);color:var(--cream-bg)}
+
+  /* hero, nav e fechamento SEGUEM escuros (não mexer) */
+  .fbhero,.hdr,.band,.statement--media,.cta-final,footer{color:var(--ink)}
+  .fbhero .eyebrow,.cta-final .eyebrow{color:var(--rose-hi)}
+  /* faixa de fechamento: ameixa costurando os dois mundos */
+  .cta-final{background:linear-gradient(158deg,var(--wine) 0%,var(--bg) 88%);position:relative;isolation:isolate}
+  .cta-final::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:radial-gradient(115% 88% at 14% 10%, rgba(var(--rose-rgb),.30), transparent 62%)}
+  .cta-final h2,.cta-final p{color:var(--ink)}
+  footer{background:var(--bg)}
+
+/* ═══ VARIANTE DE COR: Vinho & Rosé — SEM dourado — o padrão mais forte do lote dissecado ═══
+   Fonte da paleta: paleta A da casa [centremarsea.com · Awwwards HM]
+   Só a COR muda; o esqueleto da opção B (hero escuro → corpo creme → faixa) é o mesmo. */
+:root{
+  --bg:#16070E; --panel:#200A14; --panel-2:#400D1C; --ink:#F4EBDF; --muted:#C4A9A6;
+  --gold:#C98C8B; --gold-hi:#DFB3AF; --wine:#400D1C; --wine-2:#57132A;
+  --rose:#A36D6C; --rose-hi:#C98C8B;
+  --cream-bg:#F4EBDF; --cream-2:#EBDFCF; --plum-tx:#2A0A14; --plum-tx-2:#6B5058;
+  --rose-acc:#8E4F5A; --gold-claro:#8A4A52;
+  /* RGB — pros rgba() (scrim do hero, bordas, brilho do GLOW, rodapé) seguirem a variante */
+  --bg-rgb:22,7,14; --panel-rgb:32,10,20; --panel2-rgb:64,13,28;
+  --ink-rgb:244,235,223; --gold-rgb:201,140,139; --rose-rgb:163,109,108;
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap in">
+    <a href="#top" class="brand">YOU GLOW</a>
+    <nav class="nav">
+      <div class="ni"><button class="nt" type="button" aria-expanded="false" aria-haspopup="true">Serviços</button>
+        <div class="nd">
+          <div class="ndi"><button class="ndw" type="button">Unhas</button><div class="ndd">Manicure, alongamento e nail art com acabamento impecável.</div></div>
+          <div class="ndi"><button class="ndw" type="button">Estética facial</button><div class="ndd">Limpeza de pele profunda e estética avançada. Pele renovada.</div></div>
+          <div class="ndi"><button class="ndw" type="button">Cabelo &amp; salão</button><div class="ndd">Corte, coloração e finalização para o seu melhor visual.</div></div>
+        </div>
+      </div>
+      <div class="ni"><button class="nt" type="button" aria-expanded="false" aria-haspopup="true">Sobre</button>
+        <div class="nd">
+          <div class="ndi"><button class="ndw" type="button">Quem somos</button><div class="ndd">Clínica de estética e salão de beleza em Palhoça desde 2019. Estética avançada com acolhimento — para você reconectar com a sua melhor versão.</div></div>
+          <div class="ndi"><button class="ndw" type="button">O espaço</button><div class="ndd">Rua Capri, 285 — Pagani, Palhoça/SC.</div></div>
+        </div>
+      </div>
+      <div class="ni"><button class="nt" type="button" aria-expanded="false" aria-haspopup="true">Galeria</button>
+        <div class="nd">
+          <div class="ndi"><button class="ndw" type="button">Trabalhos reais</button><div class="ndd">Nossos resultados de unhas, cabelo e estética facial.</div></div>
+          <div class="ndi"><button class="ndw" type="button">No Instagram</button><div class="ndd">O dia a dia da clínica em @youglowclinic.</div></div>
+        </div>
+      </div>
+      <div class="ni"><button class="nt" type="button" aria-expanded="false" aria-haspopup="true">Contato</button>
+        <div class="nd">
+          <div class="ndi"><button class="ndw" type="button">WhatsApp</button><div class="ndd">(48) 99657-2425 — agende a sua visita.</div></div>
+          <div class="ndi"><button class="ndw" type="button">Horário</button><div class="ndd">Seg–Sex 9h–19h · Sábado 9h–14h.</div></div>
+        </div>
+      </div>
+    </nav>
+    <a class="hdr-cta" href="https://wa.me/5548996572425?text=Oi%2C%20vim%20pelo%20site%20da%20You%20Glow%20e%20quero%20agendar." target="_blank" rel="noopener">Agendar</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- HERO full-bleed (estilo referência Laser Glam) -->
+<section class="fbhero">
+  <div class="fbbg"><img src="assets/hero-alt.jpg" alt="Modelo de beleza — clima da YOU GLOW (imagem provisória)"></div>
+  <div class="fbscrim"></div>
+  <div class="fbgrain"></div>
+
+  <div class="fbword" data-r aria-hidden="true">YOU&nbsp;<span class="lit">GLOW</span></div>
+
+  <h1 class="sr-only">YOU GLOW — Clínica de Estética e Salão de Beleza em Palhoça</h1>
+
+  <div class="fbfoot">
+    <span class="eyebrow" data-r>Clínica de Estética &amp; Salão de Beleza · Palhoça</span>
+    <a class="fbcta d2" data-r href="https://wa.me/5548996572425?text=Oi%2C%20vim%20pelo%20site%20da%20You%20Glow%20e%20quero%20agendar." target="_blank" rel="noopener">Agendar no WhatsApp
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- BAND -->
+<section class="band" data-r>
+  <img src="assets/band-wide.jpg" alt="Momento de cuidado na YOU GLOW (imagem provisória)">
+  <h2>Você tem uma <span class="script">luz</span> só sua.</h2>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement statement--media">
+  <div class="wrap stmt-grid">
+    <p class="lg" data-r>Unhas, <span class="script">cabelo</span>, coloração, estética <span class="script">facial</span>, limpeza de pele — ou qualquer cuidado que faça <span class="script">você brilhar</span>.</p>
+    <div class="stmt-photos" data-r>
+      <img src="assets/work-haircolor.jpg" alt="Coloração — YOU GLOW (imagem provisória)">
+      <img src="assets/work-nailart.jpg" alt="Nail art — YOU GLOW (imagem provisória)">
+      <img src="assets/work-brows.jpg" alt="Sobrancelhas — YOU GLOW (imagem provisória)">
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="statement" id="servicos" style="padding-top:0">
+  <div class="wrap">
+    <div class="svc-head" data-r>
+      <h2>Nossos <span class="script">serviços</span></h2>
+      <span class="svc-num">/ 02</span>
+    </div>
+    <div class="scards">
+      <a class="scard" href="#" onclick="return false">
+        <img src="assets/light-nails.jpg" alt="Unhas — YOU GLOW (imagem provisória)">
+        <div class="scard__b"><span class="scard__n">(01)</span><h3 class="scard__t">Unhas</h3><p class="scard__d">Manicure, alongamento e nail art com acabamento impecável — do clássico ao autoral.</p><span class="scard__m">Ver mais →</span></div>
+      </a>
+      <a class="scard d1" href="#" onclick="return false">
+        <img src="assets/svc-facial.jpg" alt="Estética facial — YOU GLOW (imagem provisória)">
+        <div class="scard__b"><span class="scard__n">(02)</span><h3 class="scard__t">Estética Facial</h3><p class="scard__d">Limpeza de pele profunda e estética avançada. Pele renovada desde a primeira sessão.</p><span class="scard__m">Ver mais →</span></div>
+      </a>
+      <a class="scard d2" href="#" onclick="return false">
+        <img src="assets/svc-cabelo.jpg" alt="Cabelo e salão — YOU GLOW (imagem provisória)">
+        <div class="scard__b"><span class="scard__n">(03)</span><h3 class="scard__t">Cabelo &amp; Salão</h3><p class="scard__d">Corte, coloração e finalização para valorizar o seu melhor visual.</p><span class="scard__m">Ver mais →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE / SALÃO -->
+<section class="about" id="sobre">
+  <div class="wrap aboutgrid">
+    <div>
+      <span class="eyebrow" data-r>A You Glow</span>
+      <h2 data-r>Um espaço para <span class="script">reconectar</span> com a sua melhor versão.</h2>
+      <p data-r>Desde 2019 cuidando da beleza de Palhoça. Aqui, estética avançada e salão de beleza se encontram: tecnologia, técnica e um acolhimento que faz você sair diferente de como entrou.</p>
+      <p data-r>Cada procedimento é pensado para realçar a sua beleza natural — no seu tempo, do seu jeito.</p>
+      <div class="info">
+        <div data-r><span class="lbl">Onde</span><span class="val">Rua Capri, 285<br>Pagani — Palhoça/SC</span></div>
+        <div data-r><span class="lbl">Horário</span><span class="val">Seg–Sex · 9h às 19h<br>Sábado · 9h às 14h</span></div>
+      </div>
+    </div>
+    <div class="ph" data-r><img src="assets/salon-interior.jpg" alt="Espaço da YOU GLOW (imagem provisória)"></div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="works" id="galeria">
+  <div class="wrap">
+    <div class="svc-head" data-r>
+      <h2>Trabalhos <span class="script">reais</span></h2>
+      <span class="svc-num">/ 03</span>
+    </div>
+    <div class="works-grid">
+      <a data-r href="#"><img src="assets/work-nailart.jpg" alt="Nail art — YOU GLOW (imagem provisória)"></a>
+      <a data-r href="#"><img src="assets/work-haircolor.jpg" alt="Coloração — YOU GLOW (imagem provisória)"></a>
+      <a data-r href="#"><img src="assets/work-brows.jpg" alt="Sobrancelhas e cílios — YOU GLOW (imagem provisória)"></a>
+      <a data-r href="#"><img src="assets/svc-facial.jpg" alt="Limpeza de pele — YOU GLOW (imagem provisória)"></a>
+      <a class="works-more" data-r href="https://instagram.com/youglowclinic" target="_blank" rel="noopener">
+        <span class="script" style="font-size:2rem">veja mais</span>
+        <small>@youglowclinic</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final" id="contato">
+  <img class="cta-bg" src="assets/light-trio.jpg" alt="Clientes da YOU GLOW (imagem provisória)">
+  <div class="wrap">
+    <h2 data-r>Vamos criar <span class="script">beleza</span>?</h2>
+    <a class="pill" style="align-self:auto" data-r href="https://wa.me/5548996572425?text=Oi%2C%20vim%20pelo%20site%20da%20You%20Glow%20e%20quero%20agendar." target="_blank" rel="noopener">Agendar no WhatsApp
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <span class="brand">YOU GLOW</span>
+      <p>Clínica de estética & salão de beleza.<br>Você Brilha.</p>
+    </div>
+    <div class="fcol">
+      <h4>Navegar</h4>
+      <a class="fitem" href="#servicos">Serviços</a>
+      <a class="fitem" href="#sobre">Sobre</a>
+      <a class="fitem" href="#galeria">Galeria</a>
+    </div>
+    <div class="fcol">
+      <h4>Contato</h4>
+      <a class="fitem" href="https://wa.me/5548996572425" target="_blank" rel="noopener">WhatsApp (48) 99657-2425</a>
+      <a class="fitem" href="https://instagram.com/youglowclinic" target="_blank" rel="noopener">@youglowclinic</a>
+      <a class="fitem" href="mailto:youglowclinic@gmail.com">youglowclinic@gmail.com</a>
+      <span class="fitem">Rua Capri, 285 — Pagani, Palhoça/SC</span>
+    </div>
+  </div>
+  <div class="wrap fbot">
+    <span>© 2026 YOU GLOW · Clínica de Estética</span>
+    <span>Seg–Sex 9h–19h · Sáb 9h–14h</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5548996572425?text=Oi%2C%20vim%20pelo%20site%20da%20You%20Glow." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.13c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/></svg>
+</a>
+<div class="badge">Prévia YOU GLOW · VARIANTE B2 · Vinho & Rosé · imagens provisórias</div>
+
+<nav class="ov" id="ov">
+  <button class="x" id="ovx" aria-label="Fechar">&times;</button>
+  <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#galeria">Galeria</a><a href="#contato">Contato</a>
+</nav>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('[data-r]').forEach(el=>io.observe(el));
+addEventListener('load',()=>document.querySelectorAll('.fbhero [data-r]').forEach(el=>el.classList.add('in')));
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('solid',scrollY>40));
+const ov=document.getElementById('ov');
+document.getElementById('burger').onclick=()=>ov.classList.add('open');
+document.getElementById('ovx').onclick=()=>ov.classList.remove('open');
+ov.querySelectorAll('a').forEach(a=>a.onclick=()=>ov.classList.remove('open'));
+// menu drop-preview (padrão Érica): clicar NÃO rola; abre caixinha; palavra expande
+(function(){
+  var items=document.querySelectorAll('.nav .ni');
+  function closeAll(){items.forEach(function(n){n.classList.remove('open');var b=n.querySelector('.nt');if(b)b.setAttribute('aria-expanded','false');});}
+  items.forEach(function(li){
+    var btn=li.querySelector('.nt');
+    btn.addEventListener('click',function(e){e.stopPropagation();var was=li.classList.contains('open');closeAll();if(!was){li.classList.add('open');btn.setAttribute('aria-expanded','true');}});
+  });
+  document.querySelectorAll('.nav .nd').forEach(function(nd){nd.addEventListener('click',function(e){e.stopPropagation();});});
+  document.querySelectorAll('.nav .ndw').forEach(function(w){w.addEventListener('click',function(){w.parentNode.classList.toggle('on');});});
+  document.addEventListener('click',closeAll);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+// reveal robusto dos cards de serviço (abrem em cascata) — fallback garantido ao IntersectionObserver
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.scard'));
+  if(!cards.length)return;
+  function check(){
+    var vh=window.innerHeight;
+    cards.forEach(function(c){var r=c.getBoundingClientRect();if(r.top<vh*0.88&&r.bottom>0)c.classList.add('in');});
+    if(cards.every(function(c){return c.classList.contains('in');}))window.removeEventListener('scroll',check);
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check,{passive:true});
+  check();
+})();
+</script>
+</body>
+</html>
